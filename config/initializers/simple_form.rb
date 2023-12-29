@@ -9,15 +9,10 @@
 #
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
-  # Wrappers are used by the form builder to generate a
-  # complete input. You can remove any component from the
-  # wrapper, change the order or even add your own to the
-  # stack. The options given below are used to wrap the
-  # whole input.
-  config.wrappers :default, class: :input,
-                            hint_class: :field_with_hint,
-                            error_class: :field_with_errors,
-                            valid_class: :field_without_errors do |b|
+  config.wrappers :vertical_form, class: '',
+                                  hint_class: :field_with_hint,
+                                  error_class: :field_with_errors,
+                                  valid_class: :field_without_errors do |b|
     b.use :html5
     b.use :placeholder
     b.optional :maxlength
@@ -34,14 +29,27 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { tag: :p, class: 'mt-2 text-sm text-gray-500' }
   end
 
+  config.wrappers :vertical_boolean, tag: 'div', class: 'flex items-start', error_class: '' do |b|
+    b.use :html5
+    b.optional :readonly
+    b.wrapper tag: 'div', class: 'flex items-center h-5' do |ba|
+      ba.use :input, class: 'w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300'
+    end
+    b.wrapper tag: 'div', class: 'ml-3 text-sm' do |bb|
+      bb.use :label, class: 'text-gray-500', error_class: 'text-red-500'
+      bb.use :hint, wrap_with: { tag: 'p', class: 'block text-grey-700 text-xs italic' }
+      bb.use :full_error, wrap_with: { tag: 'p', class: 'block text-red-500 text-xs italic' }
+    end
+  end
+
   # The default wrapper to be used by the FormBuilder.
-  config.default_wrapper = :default
+  config.default_wrapper = :vertical_form
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
   #   inline: input + label
   #   nested: label > input
-  config.boolean_style = :nested
+  config.boolean_style = :inline
 
   # Default class for buttons
   config.button_class = 'w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center'
@@ -106,7 +114,7 @@ SimpleForm.setup do |config|
 
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
-  # config.wrapper_mappings = { string: :prepend }
+  config.wrapper_mappings = { boolean: :vertical_boolean }
 
   # Namespaces where SimpleForm should look for custom input classes that
   # override default inputs.
