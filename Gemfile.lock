@@ -141,6 +141,9 @@ GEM
     i18n_generators (2.2.2)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
+    inline_svg (1.9.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.7.1)
     irb (1.11.0)
       rdoc
@@ -348,6 +351,7 @@ DEPENDENCIES
   devise
   i18n-tasks
   i18n_generators
+  inline_svg
   isolator
   jbuilder
   jsbundling-rails

@@ -18,6 +18,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'simple_form'
+gem "inline_svg"
 
 gem 'tzinfo-data', platforms: %i[windows jruby]
 group :development, :test do
