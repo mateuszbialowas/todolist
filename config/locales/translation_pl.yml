@@ -1,0 +1,12 @@
+pl:
+  activerecord:
+    models:
+      user: Użytkownik  #g
+
+    attributes:
+      user:
+        email: E-mail  #g
+        encrypted_password: Zaszyfrowane hasło  #g
+        remember_created_at: Pamiętaj, że utworzono o godz  #g
+        reset_password_sent_at: Zresetuj hasło wysłane o godz  #g
+        reset_password_token: Zresetuj token hasła  #g
