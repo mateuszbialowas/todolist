@@ -17,3 +17,9 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude: ['config/initializers/simple_form.rb']
+
+Layout/LineLength:
+  Exclude: ['config/initializers/simple_form.rb']
