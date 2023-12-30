@@ -1,14 +1,13 @@
-
-<%= simple_form_for(@item) do |f| %>
+<%= simple_form_for @item, html: {class: 'space-y-0 flex flex-col'} do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :name %>
+  <div class="form-inputs border-b-2 pt-3 pb-2.5 px-2">
+    <%= f.input :name, label: false %>
   </div>
+  <div class="py-3 px-2 flex items-center gap-3">
+    <%= link_to "Cancel", items_path, class: 'border bg-gray-200 text-gray-700 px-2 py-1.5 text-center text-sm rounded-lg min-w-16' %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Save", class: '!w-fit min-w-16 !px-2 !py-1.5' %>
   </div>
 <% end %>
