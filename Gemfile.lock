@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/hotwired/turbo-rails.git
+  revision: 3f769d61ba8137ce8d792e354ba7d06c677c19df
+  branch: main
+  specs:
+    turbo-rails (2.0.0.pre.beta.2)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -312,10 +322,6 @@ GEM
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.3.0)
     timeout (0.4.1)
-    turbo-rails (1.5.0)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
@@ -365,7 +371,7 @@ DEPENDENCIES
   simple_form
   sprockets-rails
   stimulus-rails
-  turbo-rails
+  turbo-rails!
   tzinfo-data
   web-console
 

@@ -3,6 +3,8 @@
 <div class="px-4 mx-auto max-w-4xl lg:py-8">
   <h2 class="mb-4 text-xl font-semibold leading-none text-gray-900 md:text-2xl sm:mb-5">Items</h2>
 
+  <%= Time.zone.now %>
+
   <div id="items" class="flex flex-col divide-y">
 
     <% @items.each do |item| %>

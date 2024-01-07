@@ -33,6 +33,7 @@ class ItemsController < AuthenticatedController
 
   def update
     if @item.update(item_params)
+      flash.now[:notice] = 'Item was successfully updated now.'
       redirect_to items_path, notice: 'Item was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
@@ -42,10 +43,9 @@ class ItemsController < AuthenticatedController
   def destroy
     @item.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # redirect_to items_path, notice: 'Item was successfully destroyed.'
+    flash.now[:notice] = 'Item was successfully destroyed now.'
+    render 'items/destroy'
   end
 
   private

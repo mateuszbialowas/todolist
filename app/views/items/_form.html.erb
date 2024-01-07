@@ -3,7 +3,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs border-b-2 pt-3 pb-2.5 px-2">
-    <%= f.input :name, label: false %>
+    <%= f.input :name, label: false, autofocus: true %>
   </div>
   <div class="py-3 px-2 flex items-center gap-3">
     <%= link_to "Cancel", items_path, class: 'border bg-gray-200 text-gray-700 px-2 py-1.5 text-center text-sm rounded-lg min-w-16' %>
