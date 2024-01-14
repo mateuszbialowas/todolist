@@ -5,7 +5,7 @@ class ItemsController < AuthenticatedController
 
   # GET /items or /items.json
   def index
-    @items = current_user.items
+    @items = current_user.items.kept.order(:name)
   end
 
   # GET /items/1 or /items/1.json
@@ -41,7 +41,7 @@ class ItemsController < AuthenticatedController
   end
 
   def destroy
-    @item.destroy!
+    @item.discard!
 
     # redirect_to items_path, notice: 'Item was successfully destroyed.'
     flash.now[:notice] = 'Item was successfully destroyed now.'

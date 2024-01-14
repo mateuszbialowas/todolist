@@ -7,6 +7,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
+gem 'discard'
 gem 'i18n-tasks'
 gem 'inline_svg'
 gem 'jbuilder'

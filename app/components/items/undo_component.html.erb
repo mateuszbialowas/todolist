@@ -1,6 +1,6 @@
 <%= content_tag :div, id: dom_id(@item, "undo"), class: "shadow px-3 py-2 rounded-lg bg-stone-800 text-white flex justify-between items-center text-sm" do %>
   <span class="font-light">Task finished</span>
-  <%= link_to "Undo", "undo_polymorphic_path(item)", method: :post, class: "text-red-300 p-1 px-4 rounded-md hover:bg-stone-600" %>
+  <%= link_to "Undo", item_undo_path(@item), data: {turbo_method: :post}, class: "text-red-300 p-1 px-4 rounded-md hover:bg-stone-600" %>
   <span class="p-1 px-2 hover:bg-stone-600 rounded-md hover:cursor-pointer" data-controller="remove" data-remove-element-target-value=#<%=dom_id(@item, "undo") %> >
     <i class="fa-solid fa-xmark fa-xl"></i>
   </span>

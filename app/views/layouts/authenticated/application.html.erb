@@ -3,9 +3,6 @@
   <%= render 'layouts/head' %>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <div class="bg-gray-50 min-h-screen">
       <%= render 'shared/sidenav' %>
 
@@ -13,6 +10,9 @@
         <%= yield %>
       </main>
     </div>
-  <div id="toasts_container" class="fixed bottom-0 w-56 left-0 z-50 flex flex-col gap-3 m-3"></div>
+  <div id="toasts_container" class="fixed bottom-0 left-0 z-50 flex flex-col gap-3 m-3">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
   </body>
 </html>
