@@ -41,7 +41,7 @@ class ItemsController < AuthenticatedController
   end
 
   def destroy
-    # @item.destroy!
+    @item.destroy!
 
     # redirect_to items_path, notice: 'Item was successfully destroyed.'
     flash.now[:notice] = 'Item was successfully destroyed now.'
