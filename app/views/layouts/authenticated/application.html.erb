@@ -6,13 +6,13 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div class="bg-gray-50">
+    <div class="bg-gray-50 min-h-screen">
       <%= render 'shared/sidenav' %>
 
       <main class="p-4 md:ml-64 h-auto pt-10">
         <%= yield %>
       </main>
     </div>
-
+  <div id="toasts_container" class="fixed bottom-0 w-56 left-0 z-50 flex flex-col gap-3 m-3"></div>
   </body>
 </html>

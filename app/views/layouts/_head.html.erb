@@ -8,6 +8,5 @@
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
   <%= turbo_refreshes_with method: :morph, scroll: :preserve  %>
-  <%#= turbo_refreshes_with method: :replace, scroll: :reset  %>
   <%= content_for :head %>
 </head>

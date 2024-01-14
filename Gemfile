@@ -18,7 +18,8 @@ gem 'redis', '>= 4.0.1'
 gem 'simple_form'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
-gem "turbo-rails", github: "hotwired/turbo-rails", branch: "main"
+gem 'turbo-rails', github: 'hotwired/turbo-rails', branch: 'main'
+gem 'view_component'
 
 gem 'tzinfo-data', platforms: %i[windows jruby]
 group :development, :test do

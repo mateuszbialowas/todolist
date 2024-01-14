@@ -1,3 +1,5 @@
-<%= turbo_stream.remove @item %>
+<%#= turbo_stream.remove item %>
 
-
+<%= turbo_stream.append "toasts_container" do %>
+  <%= render ::Items::UndoComponent.new(item:) %>
+<% end %>

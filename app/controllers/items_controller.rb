@@ -41,11 +41,11 @@ class ItemsController < AuthenticatedController
   end
 
   def destroy
-    @item.destroy!
+    # @item.destroy!
 
     # redirect_to items_path, notice: 'Item was successfully destroyed.'
     flash.now[:notice] = 'Item was successfully destroyed now.'
-    render 'items/destroy'
+    render 'items/destroy', locals: { item: @item }
   end
 
   private
